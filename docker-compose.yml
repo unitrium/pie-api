@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  stop-display:
+    build: ./stop-display/
+    expose:
+      - 8080
+    environment:
+        - TZ=Europe/Copenhagen
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - stop-display

@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "src"
+version = "0.1.0"
+description = "A small API to get traffic data from DOT and format it for different devices."
+authors = ["Robin TROESCH <38283096+unitrium@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.28.2"
+Flask = "^2.2.2"
+gunicorn = "^20.1.0"
+
+[tool.poetry.scripts]
+dev = 'scripts.serve:serve_dev'
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
